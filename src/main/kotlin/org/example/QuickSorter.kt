@@ -1,17 +1,28 @@
 package org.example
 
+import java.util.*
+
 class QuickSorter {
 
     fun sort(a: IntArray): Unit {
         sort(a, 0, a.size - 1)
     }
 
+    private fun ClosedRange<Int>.random() =
+            Random().nextInt((endInclusive + 1) - start) + start
+
     private fun sort(a: IntArray, p: Int, r: Int): Unit {
         if (p < r) {
-            val q = partition(a, p, r)
+            val q = randomizedPartition(a, p, r)
             sort(a, p, q - 1)
             sort(a, q + 1, r)
         }
+    }
+
+    private fun randomizedPartition(a: IntArray, p: Int, r: Int): Int {
+        val i = (p..r).random()
+        swap(a, r, i)
+        return partition(a, p, r)
     }
 
     private fun partition(a: IntArray, p: Int, r: Int): Int {
