@@ -28,7 +28,7 @@ class QuickSorter {
     private fun partition(a: IntArray, p: Int, r: Int): Int {
         val x = a[r]
         var i = p - 1
-        for (j in p..r - 1) {
+        for (j in p until r) {
             if (a[j] <= x) {
                 i++
                 swap(a, i, j)
