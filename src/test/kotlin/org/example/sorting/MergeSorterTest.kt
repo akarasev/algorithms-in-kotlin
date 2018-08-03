@@ -1,4 +1,4 @@
-package org.example
+package org.example.sorting
 
 import org.junit.Assert.assertArrayEquals
 import org.junit.Test

@@ -1,37 +1,37 @@
-package org.example
+package org.example.sorting
 
 import org.junit.Assert.assertArrayEquals
 import org.junit.Test
 
-class QuickSorterTest {
+class HeapSorterTest {
 
     @Test fun testSort() {
-        val a = intArrayOf(2, 8, 7, 1, 3, 5, 6, 4)
-        QuickSorter().sort(a)
-        assertArrayEquals(intArrayOf(1, 2, 3, 4, 5, 6, 7, 8), a)
+        val a = intArrayOf(16, 14, 10, 8, 7, 9, 3, 2, 4, 1);
+        HeapSorter().sort(a)
+        assertArrayEquals(intArrayOf(1, 2, 3, 4, 7, 8, 9, 10, 14, 16), a)
     }
 
-    @Test fun testSortReversed() {
+    @Test fun testReversed() {
         val a = intArrayOf(5, 4, 3, 2, 1)
-        QuickSorter().sort(a)
+        HeapSorter().sort(a)
         assertArrayEquals(intArrayOf(1, 2, 3, 4, 5), a)
     }
 
-    @Test fun testSortAlreadySorted() {
+    @Test fun testSorted() {
         val a = intArrayOf(1, 2, 3, 4, 5)
-        QuickSorter().sort(a)
+        HeapSorter().sort(a)
         assertArrayEquals(intArrayOf(1, 2, 3, 4, 5), a)
     }
 
-    @Test fun testSortWithDuplicates() {
+    @Test fun testDuplicates() {
         val a = intArrayOf(5, 4, 4, 1, 1)
-        QuickSorter().sort(a)
+        HeapSorter().sort(a)
         assertArrayEquals(intArrayOf(1, 1, 4, 4, 5), a)
     }
 
     @Test fun testReverse() {
-        val a = intArrayOf(1, 2, 3, 4, 5)
-        QuickSorter().reverse(a)
+        val a = intArrayOf(1, 3, 2, 5, 4)
+        HeapSorter().reverse(a);
         assertArrayEquals(intArrayOf(5, 4, 3, 2, 1), a)
     }
 }
