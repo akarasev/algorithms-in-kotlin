@@ -1,19 +1,23 @@
 package org.example.sorting
 
 class CountingSorter {
-    fun sort(a: IntArray, b: IntArray, k: Int) {
+    fun sort(a: IntArray, k: Int): IntArray {
+        val b = IntArray(a.size)
+
         val c = IntArray(k)
         for (i in a.indices) {
-            c[a[i]] += 1
+            c[a[i]]++
         }
 
-        for (j in 1 until k) {
-            c[j] = c[j] + c[j - 1]
+        for (i in 1 until c.size) {
+            c[i] = c[i] + c[i - 1]
         }
 
-        for (i in a.size - 1 downTo 0) {
-            b[c[a[i]] - 1] = a[i]
-            c[a[i]] -= 1
+        for (j in a.size - 1 downTo 0) {
+            b[c[a[j]] - 1] = a[j]
+            c[a[j]]--
         }
+
+        return b
     }
 }
