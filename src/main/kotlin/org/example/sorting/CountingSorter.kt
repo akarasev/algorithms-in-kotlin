@@ -1,7 +1,7 @@
 package org.example.sorting
 
 class CountingSorter {
-    fun sort(a: IntArray, k: Int): IntArray {
+    fun sort(a: IntArray, k: Int) {
         val b = IntArray(a.size)
 
         val c = IntArray(k)
@@ -18,6 +18,8 @@ class CountingSorter {
             c[a[j]]--
         }
 
-        return b
+        for (i in b.indices) {
+            a[i] = b[i]
+        }
     }
 }
