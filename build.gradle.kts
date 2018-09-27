@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.2.51"
+    kotlin("jvm") version "1.2.71"
 }
 
 repositories {
@@ -7,7 +7,7 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib", "1.2.51"))
+    implementation(kotlin("stdlib", "1.2.71"))
     testImplementation("junit:junit:4.12")
 }
 
